@@ -37,3 +37,22 @@ with st.echo(code_location='below'):
     st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
         .mark_circle(color='#0068c9', opacity=0.5)
         .encode(x='x:Q', y='y:Q'))
+
+components.html(
+    """
+    <script>
+    window.MashSettings = {
+      id: "dd9f18f3-6539-4967-97bc-de1b6bac7b7c"
+    };
+    var loader = function () {
+      window.Mash.init();
+    };
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.defer = true;
+    script.onload = loader;
+    script.src = "https://app.mash.com/sdk/sdk.js";
+    var head = document.getElementsByTagName("head")[0];
+    head.appendChild(script);
+  </script>
+)
