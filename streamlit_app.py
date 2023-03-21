@@ -63,7 +63,7 @@ mash-donate-button::part(button-solid){
   </script>
   <mash-donate-button handle="my-handle" mode="all" button-size="md" button-variant="solid">
   </mash-donate-button>
-''', height=400, width=400)
+''', height=auto, width=auto)
 
 st.markdown(
     """
