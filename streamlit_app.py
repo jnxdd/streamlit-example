@@ -3,6 +3,27 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
+import streamlit.components.v1 as components
+
+
+components.html(
+    """
+    <script>
+    window.MashSettings = {
+      id: "dd9f18f3-6539-4967-97bc-de1b6bac7b7c"
+    };
+    var loader = function () {
+      window.Mash.init();
+    };
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.defer = true;
+    script.onload = loader;
+    script.src = "https://app.mash.com/sdk/sdk.js";
+    var head = document.getElementsByTagName("head")[0];
+    head.appendChild(script);
+  </script>
+)
 
 """
 # Welcome to Streamlit!
