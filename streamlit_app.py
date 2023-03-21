@@ -39,9 +39,14 @@ with st.echo(code_location='below'):
         .encode(x='x:Q', y='y:Q'))
 
 # example
-components.html(
-    """
-    <script>
+components.html('''
+<style>
+mash-donate-button::part(button-solid){
+    margin-left: 260px;
+    margin-top: 260px;
+}
+</style>
+  <script>
     window.MashSettings = {
       id: "dd9f18f3-6539-4967-97bc-de1b6bac7b7c"
     };
@@ -56,4 +61,19 @@ components.html(
     var head = document.getElementsByTagName("head")[0];
     head.appendChild(script);
   </script>
+  <mash-donate-button handle="my-handle" mode="all" button-size="md" button-variant="solid">
+  </mash-donate-button>
+''', height=400, width=400)
+
+st.markdown(
+    """
+    <style>
+        iframe[width="400"] {
+            position: fixed;
+            bottom: 0px;
+            right: 20px;
+        } 
+    </style>
+    """,
+    unsafe_allow_html=True,
 )
